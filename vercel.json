@@ -1,5 +1,15 @@
 {
-  "executable": "streamlit run app.py --server.address 0.0.0.0 --server.port 8080",
-  "framework": "streamlit",
-  "installCommand": "pip install -r requirements.txt"
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "(.*)",
+      "dest": "app.py"
+    }
+  ]
 }
